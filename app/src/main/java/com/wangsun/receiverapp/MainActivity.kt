@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
      * your broadcast receiver to receive broadcast
      ************************************************/
     private fun registerBroadcast() {
-        val intentFilter = IntentFilter()
+        val intentFilter = IntentFilter(Constants.Actions.RECEIVER_ACTION_NAME)
+        intentFilter.addAction(Constants.Actions.RECEIVER_ACTION_USER_ID)
         intentFilter.addCategory(Intent.CATEGORY_DEFAULT)
         registerReceiver(br, intentFilter)
     }
